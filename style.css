@@ -1,0 +1,64 @@
+body {
+    background-color: #f5ebe0;
+    font-family: "Cookie", cursive;
+    color: #99582a;
+}
+h1 {
+    color: #58988E;
+    font-size: 2.5rem;
+}
+header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #1a1a1a;
+}
+nav a {
+    color: #58988E;
+}
+main {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.Metodo-titulo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color:#58988E;
+}
+.precio {
+    font-weight: bold;
+    color: #99582a;
+}
+.footer {
+    background-color: #58988E;
+    color: #f5ebe0;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+}
+#reserva {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #58988E;
+    border-radius: 5px;
+    background-color: #f2f0ea;
+    align-items: center;
+    gap: 0.75rem;
+}
+#contador-tazas {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #58988E;
+}
+#boton-reservar {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.25rem;
+    background-color: #58988E;
+    color: #f2f0ea;
+    border: none;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+}

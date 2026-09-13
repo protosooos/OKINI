@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ookini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ookini Café (おおきに)</h1>
+        <p>Café de Especialidad Inspirado en Kioto, Japón</p>
+        <nav>
+            <a href="#menu">Menú</a>
+            <a href="#reserva">Reserva</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section id="metodo">
+            <p>Ookini significa "gracias" en kansai, la region de japon donde esta kioto y osaka, y donde nacio el metodo kyoto drip que preparamos en barra. Es una palabra que se dice mucho y se dice rapido, una forma de agradecer que no necesita ceremonia. Nos quedamos con ella porque resume algo de como entendemos este oficio: el cafe es un acto de gratitud hacia quienes cultivan el grano, hacia quien lo tosto y hacia quien se sienta a tomarlo sin afan. Servimos cafe de especialidad preparado con metodos lentos, granos seleccionados de productores que conocemos por nombre, y la atencion que cada taza merece. Nada se hace deprisa, y nada se hace en piloto automatico. Cada taza es un acto de gratitud, y cada acto de gratitud es una taza de cafe.
+                Servimos cafe de especialidad
+                preparado con metodos lentos y con la atencion que el grano merece.
+            </p>
+            <h2>Metodos de Preparación</h2>
+
+            <h3 class="Metodo-titulo">V60</h3>
+            <p>Filtrado por goteo con molienda media. El agua cae lentamente sobre el cafe durante 3 minutos y arrastra notas limpias y brillantes. Es el metodo mas versatil de la barra y el mejor para descubrir la personalidad de un grano nuevo. <span class="precio">$5</span></p>
+
+            <h3 class="Metodo-titulo">Kyoto Drip</h3>
+            <p>Extraccion en frio gota a gota durante ocho horas. Molienda media temperatura ambiente, paciencia japonesa. El resultacdo es un cafe denso, dulce y con muy poco. <span class="precio">$7</span></p>
+
+            <h3 class="Metodo-titulo">Siphon Japones</h3>
+            <p>Metodo de vacio con molienda media fina. El agua sube por presion se mezcla con el cafe durante 1 minuto y baja filtrado cuando se apaga la llama tarda 4 minutos en total y produce una limpia y aromatica. <span class="precio">$8</span></p>
+
+            <h3 class="Metodo-titulo">Prensa francesa</h3>
+            <p>Metodo de infusion con molienda gruesa. El agua se mezcla con el cafe durante 4 minutos y luego se presiona el filtro. Produce un cafe denso y aromático, con cuerpo y notas dulces.   <span class="precio">$3</span></p>
+        </section>
+        <section id="reserva">
+            <p>Tazas disponibles hoy: <span class="contador-tazas">50</span></p>
+            <button id="boton-reservar">Reservar una taza</button>
+        </section>
+    </main>
+    <div class="container">
+        <div class="card">
+            <h3>Reglas del Negocio:</h3>
+            <ul>
+                <li>Máximo <strong>50 tazas especiales</strong> disponibles por día.</li>
+                <li>Máximo <strong>2 tazas especiales</strong> por persona.</li>
+                <li>Prensa Francesa ($3 USD) está disponible siempre sin reserva.</li>
+            </ul>
+            <p>Tazas especiales disponibles hoy: <strong id="tazasDisponibles">50</strong> / 50</p>
+        </div>
+
+        <h2>Nuestro Menú de Preparaciones</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h4>V60 Pour Over</h4>
+                <p class="price">$5 USD</p>
+                <small>Requiere Reserva</small>
+            </div>
+            <div class="menu-item">
+                <h4>Kyoto Drip</h4>
+                <p class="price">$7 USD</p>
+                <small>Requiere Reserva</small>
+            </div>
+            <div class="menu-item">
+                <h4>Sifón Japonés</h4>
+                <p class="price">$8 USD</p>
+                <small>Requiere Reserva</small>
+            </div>
+            <div class="menu-item">
+                <h4>Prensa Francesa</h4>
+                <p class="price">$3 USD</p>
+                <small>Walk-In (Sin Reserva)</small>
+            </div>
+        </div>
+
+        <h2>Formulario de Reserva</h2>
+        <form id="formularioReserva">
+            <label for="nombre">Nombre del Cliente:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="metodo">Selecciona el Método:</label>
+            <select id="metodo">
+                <option value="V60">V60 - $5 USD</option>
+                <option value="Kyoto drip">Kyoto Drip - $7 USD</option>
+                <option value="Siphon">Sifón Japonés - $8 USD</option>
+                <option value="Prensa Francesa">Prensa Francesa - $3 USD (Sin Reserva)</option>
+            </select>
+
+            <label for="cantidad">Cantidad de Tazas:</label>
+            <input type="number" id="cantidad" min="1" max="10" value="1" required>
+
+            <button type="button" onclick="procesarReserva()">Procesar Reserva</button>
+        </form>
+
+        <!-- Área de resultados para mostrar mensajes de confirmación o error -->
+        <div id="resultado"></div>
+    </div>
+    
+    <footer id="contacto">
+        <img src="ookini_barra.png" alt="Barra de Ookini, cafe de especialidad" width="250">
+        <p>Abierto todos los días de 8:00 AM a 10:00 PM</p>
+    </footer>
+    <!-- Vinculamos el archivo de JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

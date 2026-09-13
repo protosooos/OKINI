@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ookini - Café de Especialidades (Estilo Kioto)</title>
+    <style>
+        /* Estilos Básicos en CSS para el diseño */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FBF9F5;
+            color: #2C2926;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3D3A36;
+            color: #FBF9F5;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            color: #D4A373;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card {
+            background-color: #F7F2E8;
+            border-left: 5px solid #D4A373;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .menu-item {
+            background: #FBF9F5;
+            border: 1px solid #E8E2D5;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .menu-item h4 {
+            margin: 0 0 10px 0;
+        }
+
+        .price {
+            color: #D4A373;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #CCC;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #3D3A36;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #D4A373;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .exito {
+            background-color: #E6F4EA;
+            color: #137333;
+            border: 1px solid #CEEAD6;
+        }
+
+        .error {
+            background-color: #FCE8E6;
+            color: #C5221F;
+            border: 1px solid #FAD2CF;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="metodos">
+            <h2>Métodos de Preparación</h2>
+            <p>Descubre nuestros métodos únicos de preparación de café.</p>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Tienes preguntas? ¡Contáctanos!</p>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <img src="ookini-barra.png" alt="Barra de Ookini, cafe de especialidad">
+        <p>Abierto todos los dias, de 8:00 AM a 10:00 PM.</p>
+    </footer>
+    <header>
+        <h1>Ookini Café (おおきに)</h1>
+        <p>Café de Especialidad Inspirado en Kioto, Japón</p>
+        <nav>
+            <a href="#metodos">Metodos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>Reglas del Negocio:</h3>
+            <ul>
+                <li>Máximo <strong>50 tazas especiales</strong> disponibles por día.</li>
+                <li>Máximo <strong>2 tazas especiales</strong> por persona.</li>
+                <li>Prensa Francesa ($3 USD) está disponible siempre sin reserva.</li>
+            </ul>
+            <p>Tazas especiales disponibles hoy: <strong id="tazasDisponibles">50</strong> / 50</p>
+        </div>
+
+        <h2>Nuestro Menú de Preparaciones</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h4>V60 Pour Over</h4>
+                <p class="price">$5 USD</p>
+                <small>Requiere Reserva</small>
+            </div>
+            <div class="menu-item">
+                <h4>Kyoto Drip</h4>
+                <p class="price">$7 USD</p>
+                <small>Requiere Reserva</small>
+            </div>
+            <div class="menu-item">
+                <h4>Sifón Japonés</h4>
+                <p class="price">$8 USD</p>
+                <small>Requiere Reserva</small>
+            </div>
+            <div class="menu-item">
+                <h4>Prensa Francesa</h4>
+                <p class="price">$3 USD</p>
+                <small>Walk-In (Sin Reserva)</small>
+            </div>
+        </div>
+
+        <h2>Formulario de Reserva</h2>
+        <form id="formularioReserva">
+            <label for="nombre">Nombre del Cliente:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="metodo">Selecciona el Método:</label>
+            <select id="metodo">
+                <option value="V60">V60 - $5 USD</option>
+                <option value="Kyoto drip">Kyoto Drip - $7 USD</option>
+                <option value="Siphon">Sifón Japonés - $8 USD</option>
+                <option value="Prensa Francesa">Prensa Francesa - $3 USD (Sin Reserva)</option>
+            </select>
+
+            <label for="cantidad">Cantidad de Tazas:</label>
+            <input type="number" id="cantidad" min="1" max="10" value="1" required>
+
+            <button type="button" onclick="procesarReserva()">Procesar Reserva</button>
+        </form>
+
+        <!-- Área de resultados para mostrar mensajes de confirmación o error -->
+        <div id="resultado"></div>
+    </div>
+
+    <!-- Vinculamos el archivo de JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
